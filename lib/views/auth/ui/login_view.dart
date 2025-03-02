@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
 import 'package:marketapp/views/auth/ui/Custom%20Row%20With%20Arrow%20Btn.dart';
@@ -13,73 +12,95 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: Text(
-                "welcom to Our market",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: Text(
+                  "welcom to Our market",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Card(
-              margin: EdgeInsets.all(20),
-              color: AppColors.kWhiteColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
+              SizedBox(
+                height: 24,
               ),
-              child: Column(
-                children: [
-                  customTextFormField(
-                    Labeltext: " Email",
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  customTextFormField(
-                    Labeltext: "Password",
-                    isSecured: true,
-                    suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.visibility_off,
+              Card(
+                margin: EdgeInsets.all(20),
+                color: AppColors.kWhiteColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  children: [
+                    customTextFormField(
+                      Labeltext: " Email",
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    customTextFormField(
+                      Labeltext: "Password",
+                      isSecured: true,
+                      suffixIcon: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.visibility_off,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  customTextButton(
-                    text: "Forget Password",
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomRowWithArrowBtn(
-                    text: "Login",
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomRowWithArrowBtn(
-                    text: "Login with Google",
-                  ),
-                ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    customTextButton(
+                      text: "Forget Password",
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomRowWithArrowBtn(
+                      text: "Login",
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomRowWithArrowBtn(
+                      text: "Login with Google",
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Already have an account? ",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        customTextButton(
+                          text: "Sign Up",
+                          onTap: () {},
+                        ),
+
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
-

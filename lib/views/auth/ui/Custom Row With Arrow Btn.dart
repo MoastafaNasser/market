@@ -4,7 +4,7 @@ import 'package:marketapp/views/auth/ui/custom_Arrow_Btn.dart';
 
 class CustomRowWithArrowBtn extends StatelessWidget {
   const CustomRowWithArrowBtn({
-    super.key, required this.text,
+    super.key, required this.text, required Null Function() onTap,
   });
   final  String text ;
 
