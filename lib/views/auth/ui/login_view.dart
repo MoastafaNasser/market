@@ -1,8 +1,10 @@
-import 'package:ecommerce/core/app_colors.dart';
-import 'package:ecommerce/views/auth/ui/Custom_text_Form_Field.dart';
-import 'package:ecommerce/views/auth/ui/custom_Arrow_Btn.dart';
-import 'package:ecommerce/views/auth/ui/custom_Text_Button.dart';
+
 import 'package:flutter/material.dart';
+import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/views/auth/ui/Custom%20Row%20With%20Arrow%20Btn.dart';
+import 'package:marketapp/views/auth/ui/Custom_text_Form_Field.dart';
+
+import 'package:marketapp/views/auth/ui/custom_Text_Button.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -81,28 +83,3 @@ class LoginView extends StatelessWidget {
   }
 }
 
-class CustomRowWithArrowBtn extends StatelessWidget {
-  const CustomRowWithArrowBtn({
-    super.key, required this.text,
-  });
-  final  String text ;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-        customArrowBtn(
-          onTap: () {},
-        ),
-      ],
-    );
-  }
-}

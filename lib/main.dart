@@ -1,6 +1,7 @@
-import 'package:ecommerce/core/app_colors.dart';
-import 'package:ecommerce/views/auth/ui/login_view.dart';
+
 import 'package:flutter/material.dart';
+import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/views/auth/ui/login_view.dart';
 
 void main() {
   runApp(const Ourmarket());
