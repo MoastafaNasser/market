@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
-import 'package:marketapp/views/auth/ui/Custom_E_Button.dart';
 
 class customArrowBtn extends StatelessWidget {
   const customArrowBtn({
-    super.key, this.onTap,
-   
+    super.key,
+    this.onTap,
   });
-   final void Function()? onTap;
-
-
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return 
-    
-    
-    
-    ElevatedButton(
+    return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.kPrimaryColor,
         foregroundColor: AppColors.kBordersideColor,
