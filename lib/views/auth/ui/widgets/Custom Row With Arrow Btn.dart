@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:marketapp/views/auth/ui/custom_Arrow_Btn.dart';
+import 'package:marketapp/views/auth/ui/widgets/custom_Arrow_Btn.dart';
 
 class CustomRowWithArrowBtn extends StatelessWidget {
   const CustomRowWithArrowBtn({
