@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
 
@@ -8,7 +7,9 @@ class customTextFormField extends StatelessWidget {
     required this.Labeltext,
     this.suffixIcon,
     this.isSecured = false,
+    this.keyboardType,
   });
+  final TextInputType? keyboardType;
   final String Labeltext;
   final Widget? suffixIcon;
   final bool isSecured;
@@ -24,7 +25,7 @@ class customTextFormField extends StatelessWidget {
         }
         return null;
       },
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         labelText: Labeltext,
         suffixIcon: suffixIcon,

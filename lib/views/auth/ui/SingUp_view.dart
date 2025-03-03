@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
-import 'package:marketapp/views/auth/ui/SingUp_view.dart';
 import 'package:marketapp/views/auth/ui/forget_view.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom%20Row%20With%20Arrow%20Btn.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom_text_Form_Field.dart';
-
 import 'package:marketapp/views/auth/ui/widgets/custom_Text_Button.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SingupView extends StatelessWidget {
+  const SingupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +38,14 @@ class LoginView extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
+                  
+                    customTextFormField(
+                      Labeltext: " Name",
+                      keyboardType: TextInputType.name,
+                    ),
+                      SizedBox(
+                      height: 25,
+                    ),
                     customTextFormField(
                       Labeltext: " Email",
                       keyboardType: TextInputType.emailAddress,
@@ -61,29 +67,19 @@ class LoginView extends StatelessWidget {
                     SizedBox(
                       height: 20,
                     ),
-                    customTextButton(
-                      text: "Forget Password",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ForgetView(),
-                          ),
-                        );
-                      },
-                    ),
+                   
                     SizedBox(
                       height: 20,
                     ),
                     CustomRowWithArrowBtn(
-                      text: "Login",
+                      text: "SingUp",
                       onTap: () {},
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     CustomRowWithArrowBtn(
-                      text: "Login with Google",
+                      text: "SingUp with Google",
                       onTap: () {},
                     ),
                     SizedBox(
@@ -93,16 +89,16 @@ class LoginView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Don't have an account?",
+                          "Already have an account? ",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         customTextButton(
-                          text: "Sign Up",
+                          text: "Login ",
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SingupView(),),);
+                            Navigator.pop(context);
                           },
                         ),
                       ],
@@ -114,6 +110,6 @@ class LoginView extends StatelessWidget {
           ),
         ),
       ),
-    );
+    );;
   }
 }
