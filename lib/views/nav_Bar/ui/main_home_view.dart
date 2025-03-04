@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/views/home/favorits/ui/favorite_view.dart';
+import 'package:marketapp/views/home/profile/ui/profile_view.dart';
+import 'package:marketapp/views/home/store/ui/store_view.dart';
+import 'package:marketapp/views/home/ui/home_view.dart';
 
 class MainHomeView extends StatelessWidget {
-  const MainHomeView({super.key});
+  MainHomeView({super.key});
+  final List<Widget> View = [
+    HomeView(),
+    storeView(),
+    FavoriteView(),
+    profileView(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +22,7 @@ class MainHomeView extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Container(
-            child: Center(child: Text("test View" , style: TextStyle(fontSize: 25 , fontWeight: FontWeight.bold),)),
+            child: Center(child: View[0]),
           ),
         ),
       ),
