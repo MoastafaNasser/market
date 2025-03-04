@@ -4,9 +4,10 @@ import 'package:marketapp/views/auth/ui/widgets/custom_Arrow_Btn.dart';
 
 class CustomRowWithArrowBtn extends StatelessWidget {
   const CustomRowWithArrowBtn({
-    super.key, required this.text, required Null Function() onTap,
+    super.key, required this.text, this.onTap, 
   });
   final  String text ;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomRowWithArrowBtn extends StatelessWidget {
           ),
         ),
         customArrowBtn(
-          onTap: () {},
+          onTap: onTap,
         ),
       ],
     );

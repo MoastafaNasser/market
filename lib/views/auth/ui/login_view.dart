@@ -4,8 +4,8 @@ import 'package:marketapp/views/auth/ui/SingUp_view.dart';
 import 'package:marketapp/views/auth/ui/forget_view.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom%20Row%20With%20Arrow%20Btn.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom_text_Form_Field.dart';
-
 import 'package:marketapp/views/auth/ui/widgets/custom_Text_Button.dart';
+import 'package:marketapp/views/nav_Bar/ui/main_home_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -84,7 +84,14 @@ class LoginView extends StatelessWidget {
                     ),
                     CustomRowWithArrowBtn(
                       text: "Login with Google",
-                      onTap: () {},
+                      onTap: () {
+                         Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MainHomeView(),
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(
                       height: 20,
@@ -102,7 +109,12 @@ class LoginView extends StatelessWidget {
                         customTextButton(
                           text: "Sign Up",
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SingupView(),),);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SingupView(),
+                              ),
+                            );
                           },
                         ),
                       ],
