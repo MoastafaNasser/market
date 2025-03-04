@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
-import 'package:marketapp/views/auth/ui/forget_view.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom%20Row%20With%20Arrow%20Btn.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom_text_Form_Field.dart';
 import 'package:marketapp/views/auth/ui/widgets/custom_Text_Button.dart';
@@ -110,6 +109,6 @@ class SingupView extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
   }
 }
