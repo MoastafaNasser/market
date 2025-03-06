@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
+import 'package:marketapp/core/components/custom_Search_Field.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Home View",
-        style: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+    return ListView(
+      children:[
+        customSearchField(),
+      ],
     );
   }
 }

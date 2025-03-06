@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
-import 'package:marketapp/views/auth/ui/login_view.dart';
+import 'package:marketapp/views/nav_Bar/ui/main_home_view.dart';
 
 void main() {
   runApp(const Ourmarket());
@@ -18,9 +17,7 @@ class Ourmarket extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.kScaffoldColor,
       ),
-      
-      home: LoginView(),
+      home: MainHomeView(),
     );
   }
 }
-
