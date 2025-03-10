@@ -26,13 +26,10 @@ class categoriesList extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(categories[index].iconData, size: 40),
-                      
                     ],
                   ),
                 ),
-                
                 Text(categories[index].text),
-    
               ],
             ),
           );
