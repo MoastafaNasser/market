@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/core/components/cached_image.dart';
 import 'package:marketapp/core/components/custom_Search_Field.dart';
 import 'package:marketapp/views/auth/ui/widgets/Custom_E_Button.dart';
 import 'package:marketapp/views/home/ui/widgets/Category_list.dart';
@@ -39,9 +41,9 @@ class HomeView extends StatelessWidget {
                         bottomLeft: Radius.circular(15),
                         bottomRight: Radius.circular(15),
                       ),
-                      child: Image(
-                        image: AssetImage(
-                            "assets/images/97d359_15028f250eb24051bde6447c8b4ca51e~mv2.jpg"),
+                      child: cachedImage(
+                        ImageUrl:
+                            "https://static.wixstatic.com/media/97d359_15028f250eb24051bde6447c8b4ca51e~mv2.jpg/v1/fill/w_1300%2Ch_693%2Cal_c/97d359_15028f250eb24051bde6447c8b4ca51e~mv2.jpg",
                       ),
                     ),
                     Container(
@@ -126,3 +128,4 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+
