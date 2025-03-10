@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/views/home/profile/ui/widgets/edit_name_view.dart';
 import 'widgets/custom_Row_Btn.dart';
 
 class profileView extends StatelessWidget {
@@ -48,26 +49,25 @@ class profileView extends StatelessWidget {
                 height: 20,
               ),
               customRowBtn(
-                onTap: () {},
-                icon: Icons.person,
-                text: "Edit Email"
-              ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditNameView(),
+                      ),
+                    );
+                  },
+                  icon: Icons.person,
+                  text: "Edit Email"),
               SizedBox(
                 height: 10,
               ),
               customRowBtn(
-                onTap: () {},
-                icon: Icons.shopping_basket,
-                text: "My Orders"
-              ),
+                  onTap: () {}, icon: Icons.shopping_basket, text: "My Orders"),
               SizedBox(
                 height: 10,
               ),
-              customRowBtn(
-                onTap: () {},
-                icon: Icons.logout,
-                text: "Log Out"
-              ),
+              customRowBtn(onTap: () {}, icon: Icons.logout, text: "Log Out"),
             ],
           ),
         ),
@@ -75,4 +75,3 @@ class profileView extends StatelessWidget {
     );
   }
 }
-
