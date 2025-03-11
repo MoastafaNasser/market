@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketapp/core/app_colors.dart';
+import 'package:marketapp/views/home/profile/ui/widgets/My_Orders_view.dart';
 import 'package:marketapp/views/home/profile/ui/widgets/edit_name_view.dart';
 import 'widgets/custom_Row_Btn.dart';
 
@@ -63,11 +64,25 @@ class profileView extends StatelessWidget {
                 height: 10,
               ),
               customRowBtn(
-                  onTap: () {}, icon: Icons.shopping_basket, text: "My Orders"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyOrdersView(),
+                    ),
+                  );
+                },
+                icon: Icons.shopping_basket,
+                text: "My Orders",
+              ),
               SizedBox(
                 height: 10,
               ),
-              customRowBtn(onTap: () {}, icon: Icons.logout, text: "Log Out"),
+              customRowBtn(
+                onTap: () {},
+                icon: Icons.logout,
+                text: "Log Out",
+              ),
             ],
           ),
         ),

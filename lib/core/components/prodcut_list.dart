@@ -5,17 +5,21 @@ import 'product_Card.dart';
 class productList extends StatelessWidget {
   const productList({
     super.key,
+    this.shrinkWrap,
+    this.physics,
   });
+
+  final bool? shrinkWrap;
+  final ScrollPhysics? physics;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        physics: physics ?? NeverScrollableScrollPhysics(),
         itemCount: 10,
-        shrinkWrap: true,
+        shrinkWrap: shrinkWrap ?? true,
         itemBuilder: (context, index) {
           return productcard();
         });
   }
 }
-
