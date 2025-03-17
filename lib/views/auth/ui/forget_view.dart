@@ -31,7 +31,7 @@ class ForgetView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const customTextFormField(
+                   customTextFormField(
                     Labeltext: " Email",
                   ),
                   const SizedBox(
