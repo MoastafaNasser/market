@@ -22,18 +22,20 @@ class _LoginViewState extends State<LoginView> {
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  bool isPasswordHidden = true;
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
       listener: (context, state) {
-         if (state is LogInSuccess) {
+        if (state is LogInSuccess) {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (context) => MainHomeView(),
             ),
           );
-        } 
+        }
         if (state is LogInError) {
           ShowMsg(context, state.message);
         }
@@ -82,11 +84,19 @@ class _LoginViewState extends State<LoginView> {
                                 customTextFormField(
                                   Labeltext: "Password",
                                   keyboardType: TextInputType.visiblePassword,
-                                  isSecured: true,
+                                  isSecured: isPasswordHidden,
                                   suffixIcon: IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      setState(
+                                        () {
+                                          isPasswordHidden = !isPasswordHidden;
+                                        },
+                                      );
+                                    },
                                     icon: Icon(
-                                      Icons.visibility_off,
+                                      isPasswordHidden
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
                                     ),
                                   ),
                                 ),
@@ -169,8 +179,6 @@ class _LoginViewState extends State<LoginView> {
       },
     );
   }
-
-
 
   @override
   void dispose() {

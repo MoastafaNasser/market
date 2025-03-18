@@ -16,13 +16,12 @@ class SingupView extends StatefulWidget {
 }
 
 class _SingupViewState extends State<SingupView> {
- final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
- 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
-
+  bool isPasswordHidden = true;
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +34,12 @@ class _SingupViewState extends State<SingupView> {
               builder: (context) => MainHomeView(),
             ),
           );
-        } 
+        }
         if (state is SingUpError) {
           ShowMsg(context, state.message);
         }
       },
       builder: (context, state) {
-
-
         return Scaffold(
           body: SafeArea(
             child: state is SingUpLoading
@@ -92,11 +89,19 @@ class _SingupViewState extends State<SingupView> {
                                 customTextFormField(
                                   Labeltext: "Password",
                                   keyboardType: TextInputType.visiblePassword,
-                                  isSecured: true,
+                                  isSecured: isPasswordHidden,
                                   suffixIcon: IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      setState(
+                                        () {
+                                          isPasswordHidden = !isPasswordHidden;
+                                        },
+                                      );
+                                    },
                                     icon: Icon(
-                                      Icons.visibility_off,
+                                      isPasswordHidden
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
                                     ),
                                   ),
                                 ),
@@ -110,10 +115,13 @@ class _SingupViewState extends State<SingupView> {
                                   text: "SingUp",
                                   onTap: () {
                                     if (_formKey.currentState!.validate()) {
-                                      context.read<AuthenticationCubit>().Regaster(
-                                          name: _nameController.text,
-                                          email: _emailController.text,
-                                          password: _passwordController.text);
+                                      context
+                                          .read<AuthenticationCubit>()
+                                          .Regaster(
+                                              name: _nameController.text,
+                                              email: _emailController.text,
+                                              password:
+                                                  _passwordController.text);
                                     }
                                   },
                                 ),
@@ -157,9 +165,9 @@ class _SingupViewState extends State<SingupView> {
       },
     );
   }
+
   @override
   void dispose() {
-    
     _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
