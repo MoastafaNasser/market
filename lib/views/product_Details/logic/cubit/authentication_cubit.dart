@@ -18,10 +18,26 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     } on Exception catch (e) {
       log(e.toString() as num);
       emit(LogInError(message: e.toString()));
-
-    }catch (e) {
+    } catch (e) {
       log(e.toString() as num);
       emit(LogInError(message: e.toString()));
+    }
+  }
+
+  Future<void> Regaster(
+      {required String name,
+      required String email,
+      required String password}) async {
+    emit(SingUpLoading());
+    try {
+      client.auth.signUp(password: password, email: email);
+      emit(SingUpSuccess());
+    } on Exception catch (e) {
+      log(e.toString() as num);
+      emit(SingUpError(message: e.toString()));
+    } catch (e) {
+      log(e.toString() as num);
+      emit(SingUpError(message: e.toString()));
     }
   }
 }

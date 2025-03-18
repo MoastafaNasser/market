@@ -28,6 +28,7 @@ class Ourmarket extends StatelessWidget {
         title: 'Ourmarket',
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.kScaffoldColor,
+          useMaterial3: true,
         ),
         home: LoginView(),
       ),
